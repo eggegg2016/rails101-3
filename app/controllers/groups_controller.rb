@@ -21,7 +21,8 @@ class GroupsController < ApplicationController
 		redirect_to groups_path
 	    else
 		render :new
-	    end
+
+	  end
 	end
 
     def update
@@ -31,13 +32,14 @@ class GroupsController < ApplicationController
         else
           render :edit
     end
+    end
 
     def destroy
     	@group = Group.find(params[:id])
     	@group.destroy
     	redirect_to groups_path
     end
-
+    end
 
 	private
 
@@ -45,4 +47,4 @@ def group_params
 	params.require(:group).permit(:title, :description)
 end
 
-end
+
